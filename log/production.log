@@ -48,3 +48,96 @@ D, [2019-11-19T14:31:46.837538 #15107] DEBUG -- :   [1m[35m (0.2ms)[0m  [1m
 D, [2019-11-19T14:31:46.838451 #15107] DEBUG -- :   [1m[36mProduct Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `products` WHERE `products`.`title` = BINARY 'Ruby Performance Optimization' LIMIT 1[0m
 D, [2019-11-19T14:31:46.839393 #15107] DEBUG -- :   [1m[36mProduct Create (0.2ms)[0m  [1m[32mINSERT INTO `products` (`title`, `description`, `image_url`, `price`, `created_at`, `updated_at`) VALUES ('Ruby Performance Optimization', '<p>\n      <em>Why Ruby Is Slow, and How to Fix It</em> \n      You don’t have to accept slow Ruby or Rails performance. In this\n      comprehensive guide to Ruby optimization, you’ll learn how to write\n      faster Ruby code—but that’s just the beginning. See exactly what makes\n      Ruby and Rails code slow, and how to fix it. Alex Dymo will guide you\n      through perils of memory and CPU optimization, profiling, measuring,\n      performance testing, garbage collection, and tuning. You’ll find that\n      all those “hard” things aren’t so difficult after all, and your code\n      will run orders of magnitude faster.\n      </p>', 'adrpo.jpg', 46.0, '2019-11-19 17:31:46', '2019-11-19 17:31:46')[0m
 D, [2019-11-19T14:31:46.840712 #15107] DEBUG -- :   [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+I, [2019-11-20T10:20:54.124271 #22200]  INFO -- : [30fa20c1-b189-446a-84fc-d9c239878c93] Started GET "/cable" for 127.0.0.1 at 2019-11-20 10:20:54 -0300
+I, [2019-11-20T10:20:54.159118 #22200]  INFO -- : [30fa20c1-b189-446a-84fc-d9c239878c93] Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-11-20 10:20:54 -0300
+I, [2019-11-20T10:20:54.159386 #22200]  INFO -- : [30fa20c1-b189-446a-84fc-d9c239878c93] Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+I, [2019-11-20T10:21:01.277219 #22200]  INFO -- : [84a51fea-2c11-4e28-b897-5bd380f935d8] Started GET "/en" for 127.0.0.1 at 2019-11-20 10:21:01 -0300
+I, [2019-11-20T10:21:01.278253 #22200]  INFO -- : [84a51fea-2c11-4e28-b897-5bd380f935d8] Processing by StoreController#index as HTML
+I, [2019-11-20T10:21:01.278348 #22200]  INFO -- : [84a51fea-2c11-4e28-b897-5bd380f935d8]   Parameters: {"locale"=>"en"}
+D, [2019-11-20T10:21:01.311018 #22200] DEBUG -- : [84a51fea-2c11-4e28-b897-5bd380f935d8]   [1m[35m (6.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+D, [2019-11-20T10:21:01.335371 #22200] DEBUG -- : [84a51fea-2c11-4e28-b897-5bd380f935d8]   [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+D, [2019-11-20T10:21:01.337621 #22200] DEBUG -- : [84a51fea-2c11-4e28-b897-5bd380f935d8]   [1m[36mCart Create (0.9ms)[0m  [1m[32mINSERT INTO `carts` (`created_at`, `updated_at`) VALUES ('2019-11-20 13:21:01', '2019-11-20 13:21:01')[0m
+D, [2019-11-20T10:21:01.341703 #22200] DEBUG -- : [84a51fea-2c11-4e28-b897-5bd380f935d8]   [1m[35m (3.7ms)[0m  [1m[35mCOMMIT[0m
+I, [2019-11-20T10:21:01.345944 #22200]  INFO -- : [84a51fea-2c11-4e28-b897-5bd380f935d8]   Rendering store/index.html.erb within layouts/application
+D, [2019-11-20T10:21:01.348888 #22200] DEBUG -- : [84a51fea-2c11-4e28-b897-5bd380f935d8]   [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) AS `size`, MAX(`products`.`updated_at`) AS timestamp FROM `products`[0m
+D, [2019-11-20T10:21:01.349815 #22200] DEBUG -- : [84a51fea-2c11-4e28-b897-5bd380f935d8]   [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT `products`.* FROM `products` ORDER BY `products`.`title` ASC[0m
+I, [2019-11-20T10:21:01.356665 #22200]  INFO -- : [84a51fea-2c11-4e28-b897-5bd380f935d8]   Rendered store/index.html.erb within layouts/application (10.6ms)
+I, [2019-11-20T10:21:01.356870 #22200]  INFO -- : [84a51fea-2c11-4e28-b897-5bd380f935d8] Completed 500 Internal Server Error in 78ms (ActiveRecord: 31.7ms)
+F, [2019-11-20T10:21:01.357580 #22200] FATAL -- : [84a51fea-2c11-4e28-b897-5bd380f935d8]   
+F, [2019-11-20T10:21:01.357621 #22200] FATAL -- : [84a51fea-2c11-4e28-b897-5bd380f935d8] ActionView::Template::Error (The asset "dcbang.jpg" is not present in the asset pipeline.):
+F, [2019-11-20T10:21:01.357715 #22200] FATAL -- : [84a51fea-2c11-4e28-b897-5bd380f935d8]     4:     <% @products.each do |product| %>
+[84a51fea-2c11-4e28-b897-5bd380f935d8]     5:         <% cache product do %>
+[84a51fea-2c11-4e28-b897-5bd380f935d8]     6:             <div class="entry">
+[84a51fea-2c11-4e28-b897-5bd380f935d8]     7:                 <%= image_tag(product.image_url) %>
+[84a51fea-2c11-4e28-b897-5bd380f935d8]     8:                 <h3><%= product.title %></h3>
+[84a51fea-2c11-4e28-b897-5bd380f935d8]     9:                 <%= sanitize(product.description) %>
+[84a51fea-2c11-4e28-b897-5bd380f935d8]    10:                 <div class="price_line">
+F, [2019-11-20T10:21:01.357743 #22200] FATAL -- : [84a51fea-2c11-4e28-b897-5bd380f935d8]   
+F, [2019-11-20T10:21:01.357768 #22200] FATAL -- : [84a51fea-2c11-4e28-b897-5bd380f935d8] app/views/store/index.html.erb:7:in `block (3 levels) in _app_views_store_index_html_erb__4150453670310333387_69875695782020'
+[84a51fea-2c11-4e28-b897-5bd380f935d8] app/views/store/index.html.erb:5:in `block (2 levels) in _app_views_store_index_html_erb__4150453670310333387_69875695782020'
+[84a51fea-2c11-4e28-b897-5bd380f935d8] app/views/store/index.html.erb:4:in `block in _app_views_store_index_html_erb__4150453670310333387_69875695782020'
+[84a51fea-2c11-4e28-b897-5bd380f935d8] app/views/store/index.html.erb:3:in `_app_views_store_index_html_erb__4150453670310333387_69875695782020'
+I, [2019-11-20T10:21:01.362516 #22200]  INFO -- : Finished "/cable/" [WebSocket] for 127.0.0.1 at 2019-11-20 10:21:01 -0300
+E, [2019-11-20T10:21:01.363771 #22200] ERROR -- : There was an exception - Gem::LoadError(Error loading the 'redis' Action Cable pubsub adapter. Missing a gem it depends on? redis is not part of the bundle. Add it to your Gemfile.)
+E, [2019-11-20T10:21:01.363835 #22200] ERROR -- : /home/hugo/.rvm/rubies/ruby-2.5.1/lib/ruby/site_ruby/2.5.0/bundler/rubygems_integration.rb:408:in `block (2 levels) in replace_gem'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/actioncable-5.2.3/lib/action_cable/subscription_adapter/redis.rb:5:in `<top (required)>'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:22:in `require'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:22:in `block in require_with_bootsnap_lfi'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/loaded_features_index.rb:92:in `register'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:21:in `require_with_bootsnap_lfi'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:291:in `block in require'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:257:in `load_dependency'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.3/lib/active_support/dependencies.rb:291:in `require'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/actioncable-5.2.3/lib/action_cable/server/configuration.rb:34:in `pubsub_adapter'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/actioncable-5.2.3/lib/action_cable/server/base.rb:78:in `block in pubsub'
+/home/hugo/.rvm/rubies/ruby-2.5.1/lib/ruby/2.5.0/monitor.rb:226:in `mon_synchronize'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/actioncable-5.2.3/lib/action_cable/server/base.rb:78:in `pubsub'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/actioncable-5.2.3/lib/action_cable/connection/base.rb:51:in `pubsub'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/actioncable-5.2.3/lib/action_cable/channel/streams.rb:114:in `pubsub'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/actioncable-5.2.3/lib/action_cable/channel/streams.rb:108:in `block in stop_all_streams'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/actioncable-5.2.3/lib/action_cable/channel/streams.rb:107:in `each'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/actioncable-5.2.3/lib/action_cable/channel/streams.rb:107:in `stop_all_streams'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:426:in `block in make_lambda'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:271:in `block in simple'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:517:in `block in invoke_after'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:517:in `each'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:517:in `invoke_after'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:123:in `block in run_callbacks'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.3/lib/active_support/execution_wrapper.rb:83:in `wrap'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/actioncable-5.2.3/lib/action_cable/engine.rb:68:in `block (3 levels) in <class:Engine>'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:118:in `instance_exec'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:136:in `run_callbacks'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/actioncable-5.2.3/lib/action_cable/channel/base.rb:189:in `unsubscribe_from_channel'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/actioncable-5.2.3/lib/action_cable/connection/subscriptions.rb:50:in `remove_subscription'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/actioncable-5.2.3/lib/action_cable/connection/subscriptions.rb:63:in `block in unsubscribe_from_all'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/actioncable-5.2.3/lib/action_cable/connection/subscriptions.rb:63:in `each'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/actioncable-5.2.3/lib/action_cable/connection/subscriptions.rb:63:in `unsubscribe_from_all'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/actioncable-5.2.3/lib/action_cable/connection/base.rb:184:in `handle_close'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/actioncable-5.2.3/lib/action_cable/server/worker.rb:60:in `block in invoke'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/actioncable-5.2.3/lib/action_cable/server/worker.rb:41:in `block in work'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:109:in `block in run_callbacks'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/actioncable-5.2.3/lib/action_cable/server/worker/active_record_connection_management.rb:16:in `block in with_database_connections'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/actioncable-5.2.3/lib/action_cable/connection/tagged_logger_proxy.rb:24:in `block in tag'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.3/lib/active_support/tagged_logging.rb:71:in `block in tagged'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.3/lib/active_support/tagged_logging.rb:28:in `tagged'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.3/lib/active_support/tagged_logging.rb:71:in `tagged'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/actioncable-5.2.3/lib/action_cable/connection/tagged_logger_proxy.rb:24:in `tag'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/actioncable-5.2.3/lib/action_cable/server/worker/active_record_connection_management.rb:16:in `with_database_connections'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/actioncable-5.2.3/lib/action_cable/engine.rb:62:in `block (4 levels) in <class:Engine>'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.3/lib/active_support/execution_wrapper.rb:87:in `wrap'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/actioncable-5.2.3/lib/action_cable/engine.rb:57:in `block (3 levels) in <class:Engine>'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:118:in `instance_exec'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:136:in `run_callbacks'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/actioncable-5.2.3/lib/action_cable/server/worker.rb:40:in `work'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/actioncable-5.2.3/lib/action_cable/server/worker.rb:58:in `invoke'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/actioncable-5.2.3/lib/action_cable/server/worker.rb:53:in `block in async_invoke'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/concurrent-ruby-1.1.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:348:in `run_task'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/concurrent-ruby-1.1.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:337:in `block (3 levels) in create_worker'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/concurrent-ruby-1.1.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `loop'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/concurrent-ruby-1.1.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `block (2 levels) in create_worker'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/concurrent-ruby-1.1.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `catch'
+/home/hugo/.rvm/gems/ruby-2.5.1/gems/concurrent-ruby-1.1.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `block in create_worker'
